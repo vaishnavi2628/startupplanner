@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-pine; outline-style: solid; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-pine text-white hover:bg-pine-dark; }
+  .btn-ghost { @apply btn border border-line bg-white text-ink hover:border-pine hover:text-pine; }
+  .btn-danger { @apply btn border border-line bg-white text-rose hover:border-rose; }
+  .input { @apply w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-[15px] placeholder:text-muted/60 focus:border-pine; }
+  .label { @apply mb-1.5 block text-sm font-semibold; }
+  .hint { @apply mt-1 text-xs text-muted; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ring-draw { transition: stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1); }
+}
